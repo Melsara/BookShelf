@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
+import eu.escapeadvisor.bookshelf.data.BookshelfContract.BookshelfEntry;
 
 import eu.escapeadvisor.bookshelf.R;
 
@@ -23,12 +24,21 @@ public class BookCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView tvName = (TextView) view.findViewById(R.id.name);
 
-        int productNameColumnIndex = cursor.getColumnIndex(BookshelfContract.BookshelfEntry.COLUMN_PROD_SUPPLIERNAME);
+        TextView tvName = view.findViewById(R.id.name);
+        int productNameColumnIndex = cursor.getColumnIndex(BookshelfEntry.COLUMN_PROD_PRODUCTNAME);
         String productName = cursor.getString(productNameColumnIndex);
-
         tvName.setText(productName);
+
+        TextView tvPrice =  view.findViewById(R.id.price);
+        int priceColumnIndex = cursor.getColumnIndex(BookshelfEntry.COLUMN_PROD_PRICE);
+        String productPrice = cursor.getString(priceColumnIndex);
+        tvPrice.setText(productPrice);
+
+        TextView tvQuantity = view.findViewById(R.id.quantity);
+        int quantityColumnIndex =cursor.getColumnIndex(BookshelfEntry.COLUMN_PROD_QUANTITY);
+        String productQuantity = cursor.getString(quantityColumnIndex);
+        tvQuantity.setText(productQuantity);
 
     }
 

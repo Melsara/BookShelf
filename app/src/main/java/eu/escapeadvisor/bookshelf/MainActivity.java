@@ -6,6 +6,7 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.support.design.widget.FloatingActionButton;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //insertRandomBook();
+                insertRandomBook();
             }
         });
 
@@ -52,8 +53,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
 
-    /*public void insertRandomBook() {
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+    public void insertRandomBook() {
         ContentValues values = new ContentValues();
         values.put(BookshelfEntry.COLUMN_PROD_PRODUCTNAME, getString(R.string.dummy_productname));
         values.put(BookshelfEntry.COLUMN_PROD_ISBOOK, BookshelfEntry.ISBOOK_YES);
@@ -64,15 +64,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         values.put(BookshelfEntry.COLUMN_PROD_SUPPLIERNAME, getString(R.string.dummy_supplierName));
         values.put(BookshelfEntry.COLUMN_PROD_SUPPLIERPHONENUMBER, getString(R.string.dummy_supplierPhoneNumber));
 
-        long newRowID = db.insert(BookshelfEntry.TABLE_NAME, null, values);
-        Log.v("MainActivity", "New row ID is " + newRowID);
-        if (newRowID == -1) {
-            insertToast.makeText(this, getString(R.string.insert_failure), Toast.LENGTH_LONG).show();
-        } else {
-            insertToast.makeText(this, getString(R.string.insert_success) + newRowID, Toast.LENGTH_LONG).show();
-        }
-        displayDbInfo();
-    }*/
+       Uri insertUri = getContentResolver().insert(BookshelfEntry.CONTENT_URI_PRODUCTS, values);
+
+    }
 
 
     @Override

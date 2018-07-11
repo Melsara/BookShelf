@@ -10,7 +10,7 @@ public final class BookshelfContract {
     public static final String PATH_PRODUCTS = "products";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
-    private BookshelfContract () {
+    private BookshelfContract() {
 
     }
 
@@ -37,11 +37,5 @@ public final class BookshelfContract {
         public static final int ISBOOK_YES = 1;
         public static final int ISBOOK_NO = 0;
 
-        public static boolean isValidItem(int isBook) {
-            if (isBook == ISBOOK_NO || isBook == ISBOOK_YES) {
-                return true;
-            }
-            return false;
-        }
     }
 }
