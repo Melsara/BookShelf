@@ -29,7 +29,7 @@
             android:fontFamily="sans-serif"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#AEB6BD"
-            tools:text="Price:" />
+            android:text="@string/label_price" />
 
         <TextView
             android:id="@+id/price"
@@ -49,7 +49,7 @@
             android:fontFamily="sans-serif"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#AEB6BD"
-            tools:text="Quantity left:" />
+            android:text="@string/label_quantity" />
 
         <TextView
             android:id="@+id/quantity"
