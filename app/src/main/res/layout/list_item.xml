@@ -8,11 +8,7 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="#2B3D4D"
+        style="@style/ListItemMain"
         tools:text="Name of the product" />
 
     <LinearLayout
@@ -33,32 +29,17 @@
 
         <TextView
             android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/tv_margin"
-            android:fontFamily="sans-serif"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#AEB6BD"
+            style="@style/ListItemSecondary"
             tools:text="1111.11" />
 
         <TextView
             android:id="@+id/label_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/tv_margin"
-            android:fontFamily="sans-serif"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#AEB6BD"
+            style="@style/ListItemSecondary"
             android:text="@string/label_quantity" />
 
         <TextView
             android:id="@+id/quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/tv_margin"
-            android:fontFamily="sans-serif"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#AEB6BD"
+            style="@style/ListItemSecondary"
             tools:text="9999" />
     </LinearLayout>
 
